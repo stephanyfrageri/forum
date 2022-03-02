@@ -1,8 +1,15 @@
 package br.com.alura.forum.dto
 
-data class NovoTopicoForm (
-    val titulo: String,
-    val mensagem: String,
-    val idCurso: Long,
-    val idAutor: Long
-    )
+import javax.validation.constraints.NotEmpty
+import javax.validation.constraints.NotNull
+import javax.validation.constraints.Size
+
+data class NovoTopicoForm(
+    @field:NotEmpty @field:Size(min = 5, max = 100) val titulo: String,
+    @field:NotEmpty val mensagem: String,
+    @field:NotNull val idCurso: Long,
+    @field:NotNull val idAutor: Long
+)
+
+
+"stephanyfrageri10@gmail.com"git

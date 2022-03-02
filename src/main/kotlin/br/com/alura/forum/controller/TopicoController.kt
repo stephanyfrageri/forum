@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import javax.validation.Valid
 
 @RestController //para receber dados e devolver dados
 @RequestMapping ("/topicos") //para usar URI, qualquer requisição que chegar barra tópicos  é pra essa classe tratar
@@ -26,7 +27,7 @@ class TopicoController(private val service: TopicoService){ //spring jka sabe q 
 
 
     @PostMapping
-    fun cadastrar(@RequestBody dto: NovoTopicoForm) { //pesquisa o topico no corpo da requisição
+    fun cadastrar(@RequestBody @Valid dto: NovoTopicoForm) { //pesquisa o topico no corpo da requisição
         service.cadastrar(dto)
     }
 }
