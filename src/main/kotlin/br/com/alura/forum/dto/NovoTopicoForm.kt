@@ -12,4 +12,3 @@ data class NovoTopicoForm(
 )
 
 
-"implementando bean validantion"
